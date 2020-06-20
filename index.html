@@ -47,7 +47,7 @@
         </div>
 
         <div class="row">
-            <Div class="col-md-6">
+            <div class="col-md-6">
                 <div class="submit-area">
                 <h4>Deposit</h4>
                 <input id="depositAmount" type="text" class="form-control" placeholder="$ You want to deposit">
@@ -89,14 +89,19 @@
             
             // document.getElementById("currentDeposit").innerText = totalDeposit;
 
-            updateSpanText("currentDeposit", depositNumber)
+            if(depositNumber < 0 ){
+                alert("Can Not be Negative")
+            }
+            else{
+                updateSpanText("currentDeposit", depositNumber)
 
-            
-            updateSpanText("currentBalance", depositNumber);
+                updateSpanText("currentBalance", depositNumber);
 
+                document.getElementById("depositAmount").value = "";
 
-            document.getElementById("depositAmount").value = "";
+            }
 
+           
 
         })
         function updateSpanText(id, depositNumber){
